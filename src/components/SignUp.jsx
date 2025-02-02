@@ -12,6 +12,7 @@ function SignUp() {
   const navigate = useNavigate()
   const { register, handleSubmit } = useForm()
   const [error, setError] = useState('')
+  const [showPassword, setShowPassword] = useState(true)
 
   const create = async (data) => {
     console.log(data)
@@ -28,11 +29,25 @@ function SignUp() {
     }
 
   }
+  const passShow =()=>{
+
+    setShowPassword(!showPassword)
+    let passIcon = document.getElementById('icon')
+                        if(showPassword===false){
+                            passIcon.classList.remove("fa-eye");
+                            passIcon.classList.add("fa-eye-slash");
+                        }
+                        else{
+                            passIcon.classList.remove("fa-eye-slash")
+                            passIcon.classList.add("fa-eye")
+                        }
+                    
+}
   return (
 
 
     <div className="flex items-center justify-center">
-      <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+      <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border mt-1 border-black/10`}>
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
             <Logo width="100%" />
@@ -51,16 +66,16 @@ function SignUp() {
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
         <form onSubmit={handleSubmit(create)}>
-          <div>
+          <div className='space-y-5 text-left'>
             <Input
-              label='Fullname'
+              label='Fullname:'
               placeholder='Full Name'
               {...register('name', {
                 required: true,
               })}
             />
             <Input
-              label='Email'
+              label='Email:'
               type='Email'
               placeholder='Enter Your Email'
               {...register('email', {
@@ -71,14 +86,18 @@ function SignUp() {
                 },
               })}
             />
-            <Input
-              label='Password'
-              type='password'
+           <div className='flex flex-row items-center gap-1'>
+           <Input
+              label='Password:'
+              type={showPassword?'password':'text'}
               placeholder='Enter Your Password'
               {...register('password',{
                 required: true,
               })}
             />
+             <button type='button' className='px-2 mt-7 h-10 bg-gray-400 text-white rounded-lg hover:bg-gray-600 transition' onClick = {()=> passShow() }><i id="icon" className="fas fa-eye-slash"></i></button>
+                        
+           </div>
             <Button
               type='submit'
               className='w-full'
