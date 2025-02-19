@@ -59,6 +59,22 @@ export class Authservice{
             console.log("Appwrite service error :: logout :: error",error)
         }
     }
+
+    async recoverPassword(email){
+        try {
+            return await this.account.createRecovery(email,`http://localhost:5173/forget-password`)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    async createNewPassword(userId,secret,password){
+        try {
+            return await this.account.updateRecovery(userId,secret,password)
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 
 const authService = new Authservice()

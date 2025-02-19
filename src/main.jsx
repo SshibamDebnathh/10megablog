@@ -6,7 +6,8 @@ import './index.css'
 import App from './App.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Protected from './components/AuthLayout'
-import {AddPost,Login,SignUp,AllPosts,Post,EditPost,Home} from './components/pages/pageIndex'
+import {AddPost,Login,SignUp,AllPosts,Post,EditPost,Home,ForgetPassword} from './components/pages/pageIndex'
+
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,14 @@ const router = createBrowserRouter([
         path: '/all-posts',
         element: <Protected authentication>
           <AllPosts/>
+        </Protected>
+
+      },
+     
+      {
+        path: '/forget-password',
+        element: <Protected authentication={false}>
+          <ForgetPassword/>
         </Protected>
 
       },

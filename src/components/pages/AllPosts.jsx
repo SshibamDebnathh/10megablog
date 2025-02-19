@@ -19,7 +19,7 @@ useEffect(()=>{
     <div className='w-full py-8'>
         <Container>
             <div className='flex flex-wrap'>
-                {posts?.map((post)=> (<div key={post.$id} className='w-1/4 py-2'>
+                {posts?.map((post)=> (<div key={post.$id} className='w-1/4 py-2 px-2'>
                     <PostCard {...post}/>
                 </div>))}
             </div>
