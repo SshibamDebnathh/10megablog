@@ -24,7 +24,7 @@ function ForgetPass() {
             await authService.recoverPassword(email)
             
             localStorage.setItem('email',email)
-            console.log("email sent")
+            // console.log("email sent")
            
         }
     }
