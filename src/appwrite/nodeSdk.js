@@ -18,7 +18,9 @@ export class Clientservice {
     async searchUser (name){
        try {
         const res = await this.users.list(
-            [Query.equal('name',name)]
+            // [Query.equal('name',name)],
+            // [Query.startsWith("name",name)],
+            // [Query.endsWith('name',name)],
           
         )
         
