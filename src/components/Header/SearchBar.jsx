@@ -16,12 +16,12 @@ function SearchBar() {
   useEffect(() => {
     if (!name.trim()) {
       setResult([])
-      console.log("if",name)
+      
       return;
     }
     const delayDebounceFn = setTimeout(() => {
-      console.log('timeout',name)
-      console.log(result)
+      
+     
       fetchResult();
 
   }, 300); 
@@ -39,7 +39,7 @@ function SearchBar() {
       // const users = data.users.map((user)=>user.name)
       // console.log(users)
       setResult(data.users)
-      console.log(result)
+      // console.log(result)
 
     } catch (error) {
       console.log(error)
@@ -48,19 +48,7 @@ function SearchBar() {
     setLoading(false)
   }
 
-  const highlightMatch = (text, search) => {
-    if (!search) return text;
-    const regex = new RegExp(`(${search})`, "gi");
-    return text.split(regex).map((part, index) =>
-        part.toLowerCase() === search.toLowerCase() ? (
-            <span key={index} className="bg-yellow-300">
-                {part}
-            </span>
-        ) : (
-            part
-        )
-    );
-};
+
 
   return (
     <div className='relative'>
@@ -75,7 +63,7 @@ function SearchBar() {
       {result.length > 0 && (
         <ul className="absolute bg-white border rounded mt-1 w-full shadow-lg">
           {result.map((user) => (user.name.includes(name)&&<li key={user.$id} className="p-2 hover:bg-gray-100" >
-            <Link type ='submit' to={`/profile/${user.$id}`}>{user.name}</Link>
+            <Link to={`/profile/${user.$id}`}>{user.name}</Link>
           </li>
           ))}
         </ul>

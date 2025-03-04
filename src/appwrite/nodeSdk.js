@@ -29,8 +29,17 @@ export class Clientservice {
         console.log(error)
        }
     }
+    async getProfile(userid){
+        try {
+            return await this.users.get(userid)
+               
+             
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 
-const clientservice = new Clientservice()
+const clientService = new Clientservice()
 
-export default clientservice
+export default clientService
