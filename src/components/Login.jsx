@@ -19,13 +19,14 @@ function Login() {
     const { register, handleSubmit } = useForm()
 
     const login = async (data) => {
-        
+
         setError('')
         try {
             const session = await authService.login(data)
-            
+
             if (session) {
                 const userData = await authService.getCurrentUser()
+                if (userData) dispatch(authLogin({ userData }))
                 
                 if (userData) dispatch(authLogin({userData}))
                 navigate('/')
@@ -104,8 +105,16 @@ function Login() {
                         >
                             Login
                         </Button>
+
                     </div>
                 </form>
+                <Link
+                    type='submit'
+                    className='w-full'
+                    to={'/forget-password'}
+                >
+                    Forget password
+                </Link>
             </div>
         </div>
     )

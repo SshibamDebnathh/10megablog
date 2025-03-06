@@ -6,6 +6,7 @@ import AllPosts from './AllPosts'
 import Post from './Post'
 import EditPost from './EditPost'
 import AddPost from './AddPost'
+import ForgetPassword from './ForgetPassword'
 
 
 
@@ -17,4 +18,6 @@ export  {
     Login,
     AllPosts,
     SignUp,
+    ForgetPassword,
+    
 }
