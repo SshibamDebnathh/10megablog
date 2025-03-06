@@ -9,6 +9,8 @@ import { Button, Logo, Input } from './index'
 function Login() {
 
     const [error, setError] = useState('')
+    
+    const [showPassword, setShowPassword] = useState(true)
 
     const navigate = useNavigate()
 
@@ -25,6 +27,8 @@ function Login() {
             if (session) {
                 const userData = await authService.getCurrentUser()
                 if (userData) dispatch(authLogin({ userData }))
+                
+                if (userData) dispatch(authLogin({userData}))
                 navigate('/')
 
             }
@@ -32,10 +36,24 @@ function Login() {
             setError(error.message)
         }
     }
+    const passShow =()=>{
+
+        setShowPassword(!showPassword)
+        let passIcon = document.getElementById('icon')
+                            if(showPassword===false){
+                                passIcon.classList.remove("fa-eye");
+                                passIcon.classList.add("fa-eye-slash");
+                            }
+                            else{
+                                passIcon.classList.remove("fa-eye-slash")
+                                passIcon.classList.add("fa-eye")
+                            }
+                        
+    }
     return (
         <div
             className='flex items-center justify-center w-full'>
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border mt-1 border-black/10`}>
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
@@ -54,7 +72,7 @@ function Login() {
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
                 <form onSubmit={handleSubmit(login)} className='mt-8'>
-                    <div className='space-y-5'>
+                    <div className='space-y-5 text-left'>
                         <Input
                             label='Email: '
                             type='email'
@@ -68,15 +86,19 @@ function Login() {
 
                             })}
                         />
-
+                        <div className='flex flex-row items-center gap-1'>
                         <Input
+    
                             label="Password: "
-                            type="password"
+                            type={showPassword? "password":"text"}
                             placeholder="Enter your password"
                             {...register("password", {
                                 required: true,
                             })}
                         />
+                        <button type='button' className='px-2 mt-7 h-9 bg-gray-400 text-white rounded-lg hover:bg-gray-600 transition' onClick = {()=>
+                        passShow() }><i id="icon" className="fas fa-eye-slash"></i></button>
+                        </div>
                         <Button
                             type='submit'
                             className='w-full'
