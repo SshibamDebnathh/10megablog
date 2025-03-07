@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Container, LogoutBtn, Logo } from "../index"
 import { useNavigate, Link } from 'react-router-dom'
+import SearchBar from './SearchBar'
 
 function Header() {
 
@@ -50,6 +51,9 @@ function Header() {
             </Link>
           </div>
           <ul className='flex ml-auto'>
+            {authstatus && <li>
+              <SearchBar/>
+              </li>}
             {navItems.map((item) => (
               item.active ? <li key={item.name} >
                 <button onClick={() => navigate(item.slug)}

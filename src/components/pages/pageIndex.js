@@ -7,7 +7,7 @@ import Post from './Post'
 import EditPost from './EditPost'
 import AddPost from './AddPost'
 import ForgetPassword from './ForgetPassword'
-
+import Profile from './Profile'
 
 
 export  {
@@ -19,5 +19,6 @@ export  {
     AllPosts,
     SignUp,
     ForgetPassword,
+    Profile,
     
 }
