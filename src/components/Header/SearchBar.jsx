@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import clientService from '../../appwrite/nodeSDK'
+import clientService from '../../appwrite/nodeSdk'
 import { Link } from 'react-router-dom'
 
 

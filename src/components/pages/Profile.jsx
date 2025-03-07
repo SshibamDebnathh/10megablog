@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from '../index'
 import { useParams } from 'react-router-dom'
-import clientService from '../../appwrite/nodeSDK'
+import clientService from '../../appwrite/nodeSdk'
 
 
 
