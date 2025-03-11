@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import clientService from '../../appwrite/nodeSdk'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -9,7 +9,7 @@ function SearchBar() {
   const [result, setResult] = useState([])
   const [loading, setLoading] = useState(false)
  
-
+  const navigate =useNavigate()
 
   
 
@@ -62,8 +62,12 @@ function SearchBar() {
       {loading && <p className='test-sm text-gray-500'>Loading result...</p>}
       {result.length > 0 && (
         <ul className="absolute bg-white border rounded mt-1 w-full shadow-lg">
-          {result.map((user) => (user.name.includes(name)&&<li key={user.$id} className="p-2 hover:bg-gray-100" >
-            <Link to={`/profile/${user.$id}`}>{user.name}</Link>
+          {result.map((user) => (user.name.includes(name)&&<li key={user.$id} className="p-2 hover:bg-gray-100 hover cursor-pointer" onClick={()=>{
+            navigate(`/profile/${user.$id}`)
+            setName('')
+          }}>
+            {/* <Link to={`/profile/${user.$id}`}>{user.name}</Link> */}
+            {user.name}
           </li>
           ))}
         </ul>
