@@ -99,6 +99,7 @@ export class Service {
                 conf.appwriteBucketId,
                 ID.unique(),
                 file,
+                
             )
         } catch (error) {
             throw (error)
@@ -118,9 +119,9 @@ export class Service {
             return false
         }
     }
-    getFilePreview(fileId){
+    getFileView(fileId){
       
-      return this.bucket.getFilePreview(
+      return this.bucket.getFileView(
                 conf.appwriteBucketId,
                 fileId,
                 )
