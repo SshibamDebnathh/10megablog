@@ -1,4 +1,4 @@
-import { Client,Query,Users } from "node-appwrite";
+import { Client,Users } from "node-appwrite";
 import conf from "../conf/conf";
 
 
