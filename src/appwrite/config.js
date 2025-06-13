@@ -105,6 +105,17 @@ export class Service {
             throw (error)
         }
     }
+    async listFiles(){
+        try {
+            const res = await this.bucket.listFiles(
+                conf.appwriteBucketId,
+            
+            )
+            console.log(res)
+        } catch (error) {
+            throw (error)
+        }
+    }
 
     async deleteFile(fileId){
         try {
