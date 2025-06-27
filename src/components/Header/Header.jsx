@@ -9,9 +9,8 @@ function Header() {
   const authstatus = useSelector((state) => state.auth.status)
 
   const navigate = useNavigate()
-
+  const user = useSelector(state=> state.auth.userData)
   
-
   const navItems = [
     {
       name: "Home",
@@ -49,6 +48,11 @@ function Header() {
             <Link to='/'>
               <Logo width='70px' />
             </Link>
+           { authstatus &&
+            <Link to={`/profile/${user.$id}`}>
+              {user.name}
+            </Link>
+           } 
           </div>
           <ul className='flex ml-auto'>
             {authstatus && <li>
