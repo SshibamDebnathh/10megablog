@@ -43,12 +43,13 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-400 sticky'>
+    <header className='py-5 lg:p-3 md:p-3 shadow bg-gray-400 sticky'>
 
-      <FontAwesomeIcon icon={faBars} className='absolute lg:hidden md:hidden cursor-pointer right-5' onClick={() => setBars(!bars)} />
+      <div className='flex items-center'>
+        <FontAwesomeIcon icon={faBars} className='absolute lg:hidden md:hidden cursor-pointer right-5' onClick={() => setBars(!bars)} />
+        </div>
       <Container>
         <nav
-          // className={bars ? 'hidden lg:flex lg:space-x-6 lg:text-base lg:border-2 lg:border-white lg:px-6 lg:py-2 lg:rounded-lg lg:gap-10 font-sans bg-gray-400 relative' : 'flex flex-col border-2 lg:flex-row lg:text-base lg:border-0 lg:font-sans rounded-lg  border-black fixed right-5 top-20 p-2 lg:static lg:gap-5 lg:border-white lg:p-2 lg:rounded-lg bg-gray-400 text-sm mb-12'}
           className={`${bars ? 'hidden' : 'flex flex-col fixed right-10 top-16 p-2'} 
         lg:flex lg:flex-row lg:gap-10 md:flex md:flex-row md:static
         lg:static lg:px-6 lg:py-2 lg:rounded-lg rounded-md lg:text-base
