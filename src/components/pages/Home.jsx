@@ -23,7 +23,7 @@ function Home() {
         return (
             <div className="w-full py-8 mt-4 text-center">
                 <Container>
-                    <div className="flex flex-wrap">
+                    <div className="flex">
                         <div className="p-2 w-full">
                             <h1 className="text-2xl font-bold hover:text-gray-500">
                                 Login to read posts
@@ -38,9 +38,9 @@ function Home() {
     return (
         <div className="w-full py-8">
             <Container>
-                <div className="w-full flex justify-center flex-wrap">
+                <div className="w-full flex flex-wrap justify-evenly">
                     {posts?.map((post, index) => (
-                        <div key={post.$id} className="p-2 w-1/4">
+                        <div key={post.$id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
                             <PostCard {...post} isFirst={index === 0} />
                         </div>
                     ))}
