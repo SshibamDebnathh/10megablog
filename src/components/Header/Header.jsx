@@ -3,14 +3,16 @@ import { useSelector } from 'react-redux'
 import { Container, LogoutBtn, Logo } from "../index"
 import { useNavigate, Link } from 'react-router-dom'
 import SearchBar from './SearchBar'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Header() {
 
   const authstatus = useSelector((state) => state.auth.status)
-
+  const [bars, setBars] = React.useState(true)
   const navigate = useNavigate()
-  const user = useSelector(state=> state.auth.userData)
-  
+  const user = useSelector(state => state.auth.userData)
+
   const navItems = [
     {
       name: "Home",
@@ -41,23 +43,32 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-400 sticky'>
+    <header className='py-5 lg:p-3 md:p-3 shadow bg-gray-400 sticky'>
+
+      <div className='flex items-center'>
+        <FontAwesomeIcon icon={faBars} className='absolute lg:hidden md:hidden cursor-pointer right-5' onClick={() => setBars(!bars)} />
+        </div>
       <Container>
-        <nav className='flex'>
+        <nav
+          className={`${bars ? 'hidden' : 'flex flex-col fixed right-10 top-16 p-2'} 
+        lg:flex lg:flex-row lg:gap-10 md:flex md:flex-row md:static
+        lg:static lg:px-6 lg:py-2 lg:rounded-lg rounded-md lg:text-base
+        font-sans bg-gray-400 border-white border-2 text-xs`}
+        >
           <div className='mr-4'>
             <Link to='/'>
               <Logo width='70px' />
             </Link>
-           { authstatus &&
-            <Link to={`/profile/${user.$id}`}>
-              {user.name}
-            </Link>
-           } 
+            {authstatus &&
+              <Link to={`/profile/${user.$id}`}>
+                Hello {user.name}
+              </Link>
+            }
           </div>
-          <ul className='flex ml-auto'>
+          <ul className='flex flex-col lg:flex-row md:flex-row ml-auto'>
             {authstatus && <li>
-              <SearchBar/>
-              </li>}
+              <SearchBar />
+            </li>}
             {navItems.map((item) => (
               item.active ? <li key={item.name} >
                 <button onClick={() => navigate(item.slug)}
