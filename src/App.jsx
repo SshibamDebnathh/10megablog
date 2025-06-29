@@ -29,7 +29,7 @@ useEffect(() => {
   return !loading ? (
     <>
     <Header/>
-    <main>
+    <main className='min-h-screen'>
     <Outlet/>
     </main>
     <Footer/>

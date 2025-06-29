@@ -40,7 +40,7 @@ function Header() {
       active: authstatus
     }
   ]
-
+//try to add the fonts again in the nav class and see the lighthuse score
 
   return (
     <header className='py-5 lg:p-3 md:p-3 shadow bg-gray-400 sticky'>
@@ -52,8 +52,8 @@ function Header() {
         <nav
           className={`${bars ? 'hidden' : 'flex flex-col fixed right-10 top-16 p-2'} 
         lg:flex lg:flex-row lg:gap-10 md:flex md:flex-row md:static
-        lg:static lg:px-6 lg:py-2 lg:rounded-lg rounded-md lg:text-base
-        font-sans bg-gray-400 border-white border-2 text-xs`}
+        lg:static lg:px-6 lg:py-2 lg:rounded-lg rounded-md
+        bg-gray-400 border-white border-2`}
         >
           <div className='mr-4'>
             <Link to='/'>

@@ -10,7 +10,7 @@ export default defineConfig({
     createHtmlPlugin({
       inject: {
         data: {
-          preloadImage: 'https://fra.cloud.appwrite.io/v1/storage/buckets/678e4c8b00093a8f7ed9/files/680f391d00364f0cd0e8/view?project=678e49de000b4ff55106&project=678e49de000b4ff55106', // ✅ actual image path
+          preloadImage: 'https://fra.cloud.appwrite.io/v1/storage/buckets/678e4c8b00093a8f7ed9/files/6860f59f000650cf4e73/view?project=678e49de000b4ff55106&project=678e49de000b4ff55106', // ✅ actual image path
         },
       },
     }),
