@@ -18,11 +18,13 @@ useEffect(()=>{
   return (
     <div className='w-full py-8'>
         <Container>
-            <div className='flex flex-wrap'>
-                {posts?.map((post)=> (<div key={post.$id} className='w-1/4 py-2 px-2'>
-                    <PostCard {...post}/>
-                </div>))}
-            </div>
+        <div className="w-full flex flex-wrap justify-evenly">
+                    {posts?.map((post) => (
+                        <div key={post.$id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+                            <PostCard {...post} />
+                        </div>
+                    ))}
+                </div>
         </Container>
     </div>
   )
