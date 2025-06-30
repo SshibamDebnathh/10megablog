@@ -12,7 +12,7 @@ function Home() {
         service.getPosts().then((posts) => {
             if (posts) {
                 setPosts(posts.documents);
-                service.listFiles()
+                
             }
         });
     }, []);
