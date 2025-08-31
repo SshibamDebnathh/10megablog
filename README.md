@@ -29,13 +29,13 @@ Password: demo@10megablog
 
 📸 Screenshots
 Homepage
-![Alt text](image-1.png)
+![Alt text](/public/images/homepage.png)
 
 Blog Editor
-![Alt text](10megablog.vercel.app_add-post-1.png)
+![Alt text](/public/images/10megablog.vercel.app_add-post%20(1).png)
 
 Blog Post
-![Alt text](image.png)
+![Alt text](/public/images/post.png)
 
 🛠 Tech Stack
 
