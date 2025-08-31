@@ -13,6 +13,9 @@ function Header() {
   const navigate = useNavigate()
   const user = useSelector(state => state.auth.userData)
 
+
+  
+
   const navItems = [
     {
       name: "Home",
@@ -60,7 +63,7 @@ function Header() {
               <Logo width='70px' />
             </Link>
             {authstatus &&
-              <Link to={`/profile/${user.$id}`}>
+              <Link to={'/profile'}>
                 Hello {user.name}
               </Link>
             }
