@@ -21,7 +21,7 @@ Password: demo@10megablog
 
 🖼 Image Uploads – Attach images to blog posts.
 
-🔍 Search Functionality – Find blogs by title or content.
+🔍 Search Functionality – Find users by name.
 
 📱 Responsive UI – Built with Tailwind CSS, mobile-first and cross-browser compatible.
 
