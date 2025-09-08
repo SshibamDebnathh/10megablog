@@ -63,7 +63,7 @@ function Header() {
               <Logo width='70px' />
             </Link>
             {authstatus &&
-              <Link to={'/profile'}>
+              <Link to={`/profile/${user.$id}`}>
                 Hello {user.name}
               </Link>
             }
