@@ -1,8 +1,52 @@
-# React + Vite
+📰 10MegaBlog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack blogging platform where users can sign up, create posts with images, search blogs, and manage content — built with React.js, Redux Toolkit, Tailwind CSS, Appwrite (BAAS), and TinyMCE.
 
-Currently, two official plugins are available:
+🚀 Live Demo: 10MegaBlog
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+💻 Source Code: GitHub Repo
+
+🔑 Demo Credentials
+
+Use these credentials to explore without signing up
+
+Email: demo@10megablog.com
+Password: demo@10megablog
+
+✨ Features
+
+🔐 Authentication – Signup, Login, Logout with JWT (Redux Toolkit).
+
+📝 Rich Text Editor – Create & edit blogs with TinyMCE.
+
+🖼 Image Uploads – Attach images to blog posts.
+
+🔍 Search Functionality – Find users by name.
+
+📱 Responsive UI – Built with Tailwind CSS, mobile-first and cross-browser compatible.
+
+⚡ Performance Optimized – Improved Lighthouse scores for speed, SEO, and accessibility.
+
+📸 Screenshots
+Homepage
+![Alt text](/public/images/homepage.png)
+
+Blog Editor
+![Alt text](/public/images/10megablog.vercel.app_add-post%20(1).png)
+
+Blog Post
+![Alt text](/public/images/post.png)
+
+🛠 Tech Stack
+
+Frontend: React.js, Redux Toolkit, Tailwind CSS, React-Hook-Form
+
+Backend/BAAS: Appwrite
+
+Editor: TinyMCE
+
+Deployment: Vercel
+
+📌 About the Project
+
+This project demonstrates my ability to build scalable, production-ready web applications with modern frontend tools, responsive UI, API integration, and performance optimization.
