@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, PostCard } from './../index';
 import service from '../../appwrite/config';
 import { useSelector } from 'react-redux';
+import HeroSection from '../HeroSection';
 
 
 function Home() {
@@ -12,7 +13,7 @@ function Home() {
         service.getPosts().then((posts) => {
             if (posts) {
                 setPosts(posts.documents);
-                
+
             }
         });
     }, []);
@@ -21,13 +22,11 @@ function Home() {
 
     if (authStatus === false) {
         return (
-            <div className="w-full py-8 mt-4 text-center">
+            <div className="w-full py-8 text-center">
                 <Container>
-                    <div className="flex">
-                        <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
-                                Login to read posts
-                            </h1>
+                    <div className="flex justify-center">
+                        <div className="p-2 w-full outline-1 outline-white bg-slate-200 items-center rounded-md">
+                            <HeroSection/>
                         </div>
                     </div>
                 </Container>
