@@ -46,19 +46,19 @@ function Header() {
 //try to add the fonts again in the nav class and see the lighthuse score
 
   return (
-    <header className='py-5 lg:p-3 md:p-3 shadow bg-gray-400 sticky'>
+    <header className='py-3 lg:p-3 md:p-3 shadow bg-slate-300 sticky z-20 rounded-md'>
 
       <div className='flex items-center'>
         <FontAwesomeIcon icon={faBars} className='absolute lg:hidden md:hidden cursor-pointer right-5' onClick={() => setBars(!bars)} />
         </div>
-      <Container>
+      <Container className='px-0'>
         <nav
           className={`${bars ? 'hidden' : 'flex flex-col fixed right-10 top-16 p-2'} 
         lg:flex lg:flex-row lg:gap-10 md:flex md:flex-row md:static
         lg:static lg:px-6 lg:py-2 lg:rounded-lg rounded-md
-        bg-gray-400 border-white border-2`}
+        bg-gray-800 border-white border-2`}
         >
-          <div className='mr-4'>
+          <div className='flex text-white font-bold p-2 items-center justify-center'>
             <Link to='/'>
               <Logo width='70px' />
             </Link>
@@ -75,7 +75,7 @@ function Header() {
             {navItems.map((item) => (
               item.active ? <li key={item.name} >
                 <button onClick={() => navigate(item.slug)}
-                  className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                  className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full font-semibold text-lg text-white'
                 >{item.name}</button>
               </li> : null
             ))}
