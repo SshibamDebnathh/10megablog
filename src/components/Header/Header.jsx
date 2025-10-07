@@ -75,7 +75,7 @@ function Header() {
             {navItems.map((item) => (
               item.active ? <li key={item.name} >
                 <button onClick={() => navigate(item.slug)}
-                  className='inline-bock px-6 py-2 duration-200 hover:bg-blue-600 rounded-full font-semibold text-lg text-white'
+                  className='inline-bock px-6 py-2 duration-200 hover:bg-blue-700 rounded-full font-semibold text-lg text-white'
                 >{item.name}</button>
               </li> : null
             ))}
