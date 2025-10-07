@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
-    let date = new Date()
+   
     return (
         <section className="relative flex flex-col items-center justify-center min- h-screen text-center py-10 px-2 bg-gradient-to-b from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black overflow-hidden border-3 border-slate-200 z-10">
             {/* Background circles for soft design */}
@@ -36,7 +36,7 @@ const HeroSection = () => {
 
             {/* Small tagline */}
             <p className="mt-10 text-sm text-gray-500 dark:text-gray-400">
-                ✨ Empowering creators since {date.getFullYear()}
+                ✨ Empowering creators since {new Date().getFullYear()}
             </p>
         </section>
     );
